@@ -44,7 +44,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/all-walks" element={<AllWalks />} />
+      <Route path="/routes" element={<AllWalks />} />
       <Route path="/community" element={<CommunityChat />} />
       <Route path="/walk-registration" element={<WalkRegistration />} />
       <Route path="/register" element={<WalkRegistration />} />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, MapPin, Users, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
@@ -26,12 +27,12 @@ const Hero: React.FC = () => {
     Join Stride Society
     <ArrowRight className="ml-2 h-5 w-5" />
   </a>
-  <a
-    href="/all-walks"
-    className="border-2 border-black text-black px-8 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors duration-200 inline-flex justify-center"
-  >
-    View Routes
-  </a>
+  <Link
+  to="/routes"
+  className="border-2 border-black text-black px-8 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors duration-200 inline-flex justify-center"
+>
+  View Routes
+</Link>
 </div>
 
 

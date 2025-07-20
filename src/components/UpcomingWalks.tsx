@@ -1,6 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar, MapPin, Clock, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+<section id="routes" className="py-16">
+  <h2 className="text-3xl font-bold mb-6">Routes</h2>
+  {/* Your content goes here */}
+</section>
+
 
 const UpcomingWalks = () => {
   const navigate = useNavigate();
@@ -130,12 +137,12 @@ const UpcomingWalks = () => {
         </div>
 
         <div className="text-center mt-12">
-          <a 
-            href="/all-walks" 
-            className="border-2 border-black text-black px-8 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors duration-200 inline-block"
-          >
-            View All Walks
-          </a>
+        <Link
+  to="/routes"
+  className="border-2 border-black text-black px-8 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors duration-200 inline-flex justify-center"
+>
+  View All Walks
+</Link>
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ const Header: React.FC = () => {
     { name: 'Walks', href: '#walks' },
     { name: 'Join', href: '#join' },
     { name: 'Events', href: '#events' },
-    { name: 'Routes', href: '/all-walks' },
+    { name: 'Routes', href: '/routes' },
     { name: 'Store', href: '#store' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
