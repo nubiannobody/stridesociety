@@ -71,7 +71,7 @@ const WalkRegistration: React.FC = () => {
               ))}
             </div>
             <div className="grid grid-cols-2 gap-4 mb-4 text-gray-700">
-              <p><strong>Distance:</strong> {walk.miles}</p>
+              <p><strong>Distance:</strong> {walk.distance}</p>
               <p><strong>Difficulty:</strong> {walk.difficulty}</p>
               <p><strong>Type:</strong> {walk.type}</p>
               <p><strong>Location:</strong> {walk.location}</p>

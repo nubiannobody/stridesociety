@@ -2,59 +2,71 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Calendar, MapPin, Clock, Users } from 'lucide-react';
 
-const UpcomingWalks: React.FC = () => {
+const UpcomingWalks = () => {
   const navigate = useNavigate();
+
+  const handleRegister = (walk: Walk) => {
+    navigate('/walk-registration', { state: { walk } });
+  };
 
   const upcomingWalks = [
     {
       name: "FitBar to Coulon Park",
-      date: "March 15, 2025",
-      time: "9:00 AM",
-      location: "FitBar Café, Renton",
-      distance: "4.0 miles",
+      date: "July 30th, 2025",
+      theme: "A scenic city-to-waterfront route starting at FitBar Café and ending at Coulon Park. Ideal for casual walkers and community connection.",
+      miles: "4.0 miles",
+      time: "1 hour 20 minutes",
       difficulty: "Moderate",
-      spots: "8 spots left",
+      rating: 4.9,
+      participants: 45,
       type: "Out & Back",
-      summary: "A scenic city-to-waterfront route starting at FitBar Café and ending at Coulon Park."
+      location: "Renton, WA",
+      highlights: ["Waterfront views", "Urban to nature", "Coffee stop"],
+      image: "https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      name: "Coos Creek Trail Loop",
+      date: "August 30th, 2025",
+      theme: "Shaded, nature-heavy path perfect for early mornings",
+      miles: "2.2 miles",
+      time: "45 minutes",
+      difficulty: "Easy",
+      rating: 4.8,
+      participants: 32,
+      type: "Loop",
+      location: "Renton, WA",
+      highlights: ["Shaded trail", "Creek views", "Morning birds"],
+      image: "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      name: "Heritage Park Path",
+      date: "September 30th, 2025",
+      theme: "Family-friendly loop with park views",
+      miles: "3.5 miles",
+      time: "1 hour 10 minutes",
+      difficulty: "Easy",
+      rating: 4.7,
+      participants: 67,
+      type: "Loop",
+      location: "Renton, WA",
+      highlights: ["Family friendly", "Park amenities", "Playground stops"],
+      image: "https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       name: "Sunset Stroll at Lake Washington Blvd",
-      date: "March 16, 2025",
-      time: "6:30 PM",
-      location: "Lake Washington Blvd, Renton",
-      distance: "2.0 miles",
+      date: "October 30th, 2025",
+      theme: "Flat and relaxing evening walk with stunning lake views",
+      miles: "2.0 miles",
+      time: "40 minutes",
       difficulty: "Easy",
-      spots: "12 spots left",
+      rating: 4.9,
+      participants: 89,
       type: "Out & Back",
-      summary: "Flat and relaxing evening walk with stunning lake views."
-    },
-    {
-      name: "Morning Motivation @ Tiffany Park",
-      date: "March 18, 2025",
-      time: "7:00 AM",
-      location: "Tiffany Park, Renton",
-      distance: "2.7 miles",
-      difficulty: "Easy",
-      spots: "15 spots left",
-      type: "Loop",
-      summary: "Great for weekday walks and light cardio."
-    },
-    {
-      name: "Urban Explorer - Renton Loop",
-      date: "March 20, 2025",
-      time: "10:00 AM",
-      location: "Downtown Renton",
-      distance: "4.5 miles",
-      difficulty: "Moderate",
-      spots: "6 spots left",
-      type: "Loop",
-      summary: "Downtown and scenic detour combo."
+      location: "Renton, WA",
+      highlights: ["Lake views", "Sunset timing", "Flat terrain"],
+      image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ];
-
-  const handleRegister = (walk: typeof upcomingWalks[0]) => {
-    navigate('/walk-registration', { state: { walk } });
-  };
 
   return (
     <section id="walks" className="py-20 bg-white">
@@ -100,12 +112,12 @@ const UpcomingWalks: React.FC = () => {
                 </div>
                 <div className="flex items-center text-gray-600">
                   <Users className="h-5 w-5 mr-3" />
-                  <span>{walk.spots}</span>
+                  <span>{walk.participants}</span>
                 </div>
               </div>
 
               <div className="flex justify-between items-center">
-                <span className="text-lg font-semibold text-black">{walk.distance}</span>
+                <span className="text-lg font-semibold text-black">{walk.miles}</span>
                 <button 
                   onClick={() => handleRegister(walk)}
                   className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200"

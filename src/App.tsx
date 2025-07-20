@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -15,6 +15,9 @@ import CommunityChat from './components/CommunityChat';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AllWalks from './components/AllWalks';
+import RouteMapViewer from './components/RouteMapViewer'; // update the path if needed
+import FullScreenMap from './components/FullScreenMap';
+
 
 function HomePage() {
   return (
@@ -39,14 +42,15 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/all-walks" element={<AllWalks />} />
-        <Route path="/community" element={<CommunityChat />} />
-        <Route path="/walk-registration" element={<WalkRegistration />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/all-walks" element={<AllWalks />} />
+      <Route path="/community" element={<CommunityChat />} />
+      <Route path="/walk-registration" element={<WalkRegistration />} />
+      <Route path="/register" element={<WalkRegistration />} />
+      <Route path="/route-map" element={<RouteMapViewer />} />
+      <Route path="/fullscreen-map" element={<FullScreenMap />} />
+    </Routes>
   );
 }
 

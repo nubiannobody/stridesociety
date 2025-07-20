@@ -20,14 +20,14 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
   <a
-    href="#walks"
+    href="#join"
     className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 flex items-center inline-flex justify-center"
   >
-    Join the Walk
+    Join Stride Society
     <ArrowRight className="ml-2 h-5 w-5" />
   </a>
   <a
-    href="#routes"
+    href="/all-walks"
     className="border-2 border-black text-black px-8 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors duration-200 inline-flex justify-center"
   >
     View Routes
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
                 <Clock className="h-8 w-8 text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Regular Walks</h3>
-              <p className="text-gray-600">3 walks per week</p>
+              <p className="text-gray-600">1 walk per month</p>
             </div>
           </div>
         </div>

@@ -20,7 +20,11 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Waterfront views", "Urban to nature", "Coffee stop"],
-      image: "https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coordinates: {
+        start: { lat: 47.4829, lng: -122.2171 },
+        end: { lat: 47.4638, lng: -122.2076 }
+      }
     },
     {
       name: "Coos Creek Trail Loop",
@@ -34,7 +38,11 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Shaded trail", "Creek views", "Morning birds"],
-      image: "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coordinates: {
+        start: { lat: 47.4729, lng: -122.2271 },
+        end: { lat: 47.4729, lng: -122.2271 }
+      }
     },
     {
       name: "Heritage Park Path",
@@ -48,7 +56,11 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Family friendly", "Park amenities", "Playground stops"],
-      image: "https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coordinates: {
+        start: { lat: 47.4929, lng: -122.2371 },
+        end: { lat: 47.4929, lng: -122.2371 }
+      }
     },
     {
       name: "Sunset Stroll at Lake Washington Blvd",
@@ -62,7 +74,11 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Lake views", "Sunset timing", "Flat terrain"],
-      image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coordinates: {
+        start: { lat: 47.4629, lng: -122.2071 },
+        end: { lat: 47.4529, lng: -122.1971 }
+      }
     },
     {
       name: "Morning Motivation @ Tiffany Park",
@@ -76,7 +92,11 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Morning energy", "Light cardio", "Park facilities"],
-      image: "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coordinates: {
+        start: { lat: 47.5029, lng: -122.2471 },
+        end: { lat: 47.5029, lng: -122.2471 }
+      }
     },
     {
       name: "Urban Explorer - Renton Loop",
@@ -90,7 +110,11 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Downtown views", "Urban exploration", "Mixed terrain"],
-      image: "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coordinates: {
+        start: { lat: 47.4829, lng: -122.2171 },
+        end: { lat: 47.4829, lng: -122.2171 }
+      }
     },
     {
       name: "Cedar River Trail",
@@ -104,7 +128,11 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Seasonal",
       highlights: ["River views", "Wildlife", "Longer distance"],
-      image: "https://images.pexels.com/photos/1263986/pexels-photo-1263986.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/1263986/pexels-photo-1263986.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coordinates: {
+        start: { lat: 47.4929, lng: -122.1971 },
+        end: { lat: 47.5129, lng: -122.1771 }
+      }
     },
     {
       name: "Renton Highlands Loop",
@@ -118,7 +146,11 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Hill training", "City views", "Cardio workout"],
-      image: "https://images.pexels.com/photos/1571454/pexels-photo-1571454.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/1571454/pexels-photo-1571454.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coordinates: {
+        start: { lat: 47.5129, lng: -122.2371 },
+        end: { lat: 47.5129, lng: -122.2371 }
+      }
     },
     {
       name: "Coming Soon",
@@ -132,7 +164,11 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Inactive",
       highlights: ["Sunset Timing", "Beach views", "Cardio workout"],
-      image: "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600",
+      coordinates: {
+        start: { lat: 47.4729, lng: -122.1871 },
+        end: { lat: 47.4729, lng: -122.1871 }
+      }
     }
   ];
 
@@ -162,6 +198,100 @@ const AllWalks: React.FC = () => {
 
   const handleRegister = (walk: typeof allRoutes[0]) => {
     navigate('/walk-registration', { state: { walk } });
+  };
+
+  const handleViewMap = (route: typeof allRoutes[0]) => {
+    // Opens Google Maps with walking directions
+    const { start, end } = route.coordinates;
+    const googleMapsUrl = `https://www.google.com/maps/dir/${start.lat},${start.lng}/${end.lat},${end.lng}/@${start.lat},${start.lng},15z/data=!3m1!4b1!4m2!4m1!3e2`;
+    
+    window.open(googleMapsUrl, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+  };
+
+  const handleViewMapOpenStreetMap = (route: typeof allRoutes[0]) => {
+    // Alternative: Use OpenStreetMap (free)
+    const { start, end } = route.coordinates;
+    const osmUrl = `https://www.openstreetmap.org/directions?engine=fossgis_osrm_foot&route=${start.lat}%2C${start.lng}%3B${end.lat}%2C${end.lng}#map=15/${start.lat}/${start.lng}`;
+    
+    window.open(osmUrl, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+  };
+
+  const handleViewMapCustom = (route: typeof allRoutes[0]) => {
+    // Create a custom HTML page with route info and map
+    const { start, end } = route.coordinates;
+    const mapHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>${route.name} - Route Map</title>
+        <style>
+          body { margin: 0; padding: 20px; font-family: Arial, sans-serif; background: #f5f5f5; }
+          h1 { color: #333; margin-bottom: 10px; }
+          .info { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+          .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+          .stat { background: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center; }
+          .stat-label { font-size: 12px; color: #666; text-transform: uppercase; }
+          .stat-value { font-size: 18px; font-weight: bold; color: #333; }
+          .highlights { margin: 15px 0; }
+          .highlight-tag { display: inline-block; background: #e9ecef; color: #495057; padding: 5px 10px; margin: 2px; border-radius: 15px; font-size: 12px; }
+          #map { height: 500px; width: 100%; border: 1px solid #ddd; border-radius: 8px; }
+          .note { margin-top: 15px; color: #666; font-size: 14px; text-align: center; }
+          .difficulty { padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+          .easy { background: #d4edda; color: #155724; }
+          .moderate { background: #fff3cd; color: #856404; }
+          .challenging { background: #f8d7da; color: #721c24; }
+        </style>
+      </head>
+      <body>
+        <div class="info">
+          <h1>${route.name}</h1>
+          <span class="difficulty ${route.difficulty.toLowerCase()}">${route.difficulty}</span>
+          <p style="color: #666; margin: 10px 0;">${route.theme}</p>
+          
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-label">Distance</div>
+              <div class="stat-value">${route.miles}</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Duration</div>
+              <div class="stat-value">${route.time}</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Type</div>
+              <div class="stat-value">${route.type}</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Rating</div>
+              <div class="stat-value">${route.rating}/5 ⭐</div>
+            </div>
+          </div>
+
+          <div class="highlights">
+            <strong>Route Highlights:</strong><br>
+            ${route.highlights.map(highlight => `<span class="highlight-tag">${highlight}</span>`).join('')}
+          </div>
+        </div>
+        
+        <iframe 
+          id="map"
+          src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO2BIVdsZ8Qi3A&origin=${start.lat},${start.lng}&destination=${end.lat},${end.lng}&mode=walking"
+          allowfullscreen>
+        </iframe>
+        
+        <div class="note">
+          📍 This is a sample route for demonstration. Actual walking paths may vary.<br>
+          For best results, use a dedicated GPS navigation app while walking.
+        </div>
+      </body>
+      </html>
+    `;
+
+    const mapWindow = window.open('', '_blank', 'width=900,height=700,scrollbars=yes,resizable=yes');
+    if (mapWindow) {
+      mapWindow.document.write(mapHtml);
+      mapWindow.document.close();
+    }
   };
 
   const handleDownloadMap = (routeName: string) => {
@@ -286,17 +416,13 @@ const AllWalks: React.FC = () => {
                     >
                       {route.status === 'Inactive' ? 'Unavailable' : 'Register'}
                     </button>
-                    <button className="flex-1 border-2 border-black text-black py-2 px-4 rounded-lg hover:bg-black hover:text-white transition-colors duration-200">
+                    <button 
+                      onClick={() => handleViewMap(route)}
+                      className="flex-1 border-2 border-black text-black py-2 px-4 rounded-lg hover:bg-black hover:text-white transition-colors duration-200"
+                    >
                       View Map
                     </button>
                   </div>
-                  <button
-                    onClick={() => handleDownloadMap(route.name)}
-                    className="w-full border border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-200 flex items-center justify-center"
-                  >
-                    <Download className="h-4 w-4 mr-2" />
-                    Download Route Map
-                  </button>
                 </div>
               </div>
             </div>

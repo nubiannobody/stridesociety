@@ -10,7 +10,7 @@ const Header: React.FC = () => {
     { name: 'Walks', href: '#walks' },
     { name: 'Join', href: '#join' },
     { name: 'Events', href: '#events' },
-    { name: 'Routes', href: '#routes' },
+    { name: 'Routes', href: '/all-walks' },
     { name: 'Store', href: '#store' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Contact', href: '#contact' },
@@ -22,8 +22,13 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Navigation className="h-8 w-8 text-black mr-3" />
-            <span className="text-2xl font-bold text-black">Stride Society</span>
+            <Navigation className="h-8 w-8 text-black mr-3" /><a
+  href="#home"
+  className="text-2xl font-bold text-black inline-block px-4 py-2"
+>
+  Stride Society
+</a>
+
           </div>
           
           {/* Desktop Navigation */}
