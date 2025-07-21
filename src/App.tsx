@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Hero from './components/Hero';
 import About from './components/About';
 import UpcomingWalks from './components/UpcomingWalks';
@@ -13,16 +14,23 @@ import Gallery from './components/Gallery';
 import FAQ from './components/FAQ';
 import CommunityChat from './components/CommunityChat';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
 import AllWalks from './components/AllWalks';
-import RouteMapViewer from './components/RouteMapViewer'; // update the path if needed
+import RouteMapViewer from './components/RouteMapViewer';
 import FullScreenMap from './components/FullScreenMap';
 
+function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Header />
+      <div className="min-h-screen bg-white">{children}</div>
+      <Footer />
+    </>
+  );
+}
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <>
       <Hero />
       <About />
       <UpcomingWalks />
@@ -35,21 +43,20 @@ function HomePage() {
       <FAQ />
       <CommunityChat />
       <Contact />
-      <Footer />
-    </div>
+    </>
   );
 }
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/routes" element={<AllWalks />} />
-      <Route path="/community" element={<CommunityChat />} />
-      <Route path="/walk-registration" element={<WalkRegistration />} />
-      <Route path="/register" element={<WalkRegistration />} />
-      <Route path="/route-map" element={<RouteMapViewer />} />
-      <Route path="/fullscreen-map" element={<FullScreenMap />} />
+      <Route path="/" element={<Layout><HomePage /></Layout>} />
+      <Route path="/routes" element={<Layout><AllWalks /></Layout>} />
+      <Route path="/community" element={<Layout><CommunityChat /></Layout>} />
+      <Route path="/walk-registration" element={<Layout><WalkRegistration /></Layout>} />
+      <Route path="/register" element={<Layout><WalkRegistration /></Layout>} />
+      <Route path="/route-map" element={<Layout><RouteMapViewer /></Layout>} />
+      <Route path="/fullscreen-map" element={<Layout><FullScreenMap /></Layout>} />
     </Routes>
   );
 }

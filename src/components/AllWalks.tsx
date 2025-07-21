@@ -20,7 +20,7 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Waterfront views", "Urban to nature", "Coffee stop"],
-      image: "https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/fitbar to coulon park.png",
       coordinates: {
         start: { lat: 47.4829, lng: -122.2171 },
         end: { lat: 47.4638, lng: -122.2076 }
@@ -38,7 +38,7 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Shaded trail", "Creek views", "Morning birds"],
-      image: "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/Coos Creek Trail.png",
       coordinates: {
         start: { lat: 47.4729, lng: -122.2271 },
         end: { lat: 47.4729, lng: -122.2271 }
@@ -56,7 +56,7 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Family friendly", "Park amenities", "Playground stops"],
-      image: "https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/heritage park path.png",
       coordinates: {
         start: { lat: 47.4929, lng: -122.2371 },
         end: { lat: 47.4929, lng: -122.2371 }
@@ -74,7 +74,7 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Lake views", "Sunset timing", "Flat terrain"],
-      image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/Sunset Stroll at Lake Washington.png",
       coordinates: {
         start: { lat: 47.4629, lng: -122.2071 },
         end: { lat: 47.4529, lng: -122.1971 }
@@ -92,7 +92,7 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Morning energy", "Light cardio", "Park facilities"],
-      image: "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/morning motivation @ tiffany park.png",
       coordinates: {
         start: { lat: 47.5029, lng: -122.2471 },
         end: { lat: 47.5029, lng: -122.2471 }
@@ -110,7 +110,7 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Downtown views", "Urban exploration", "Mixed terrain"],
-      image: "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/urban explorer renton loop.png",
       coordinates: {
         start: { lat: 47.4829, lng: -122.2171 },
         end: { lat: 47.4829, lng: -122.2171 }
@@ -128,7 +128,7 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Seasonal",
       highlights: ["River views", "Wildlife", "Longer distance"],
-      image: "https://images.pexels.com/photos/1263986/pexels-photo-1263986.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/Cedar River Trail.png",
       coordinates: {
         start: { lat: 47.4929, lng: -122.1971 },
         end: { lat: 47.5129, lng: -122.1771 }
@@ -146,7 +146,7 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Active",
       highlights: ["Hill training", "City views", "Cardio workout"],
-      image: "https://images.pexels.com/photos/1571454/pexels-photo-1571454.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/Renton Highlands Loop.png",
       coordinates: {
         start: { lat: 47.5129, lng: -122.2371 },
         end: { lat: 47.5129, lng: -122.2371 }
@@ -164,7 +164,7 @@ const AllWalks: React.FC = () => {
       location: "Renton, WA",
       status: "Inactive",
       highlights: ["Sunset Timing", "Beach views", "Cardio workout"],
-      image: "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/Beach Walk.png",
       coordinates: {
         start: { lat: 47.4729, lng: -122.1871 },
         end: { lat: 47.4729, lng: -122.1871 }
