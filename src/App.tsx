@@ -18,6 +18,10 @@ import AllWalks from './components/AllWalks';
 import RouteMapViewer from './components/RouteMapViewer';
 import FullScreenMap from './components/FullScreenMap';
 import SignIn from './pages/auth/SignIn';
+import ForgotPassword from './pages/auth/ForgotPassword';
+import UpdatePassword from './pages/auth/UpdatePassword';
+import Welcome from './profile/welcome';
+
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -58,6 +62,9 @@ function App() {
       <Route path="/register" element={<Layout><WalkRegistration /></Layout>} />
       <Route path="/route-map" element={<Layout><RouteMapViewer /></Layout>} />
       <Route path="/auth/signin" element={<SignIn />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/welcome" element={<Welcome />} />
+      <Route path="/update-password" element={<UpdatePassword />} />
       <Route path="/fullscreen-map" element={<Layout><FullScreenMap /></Layout>} />
     </Routes>
   );
