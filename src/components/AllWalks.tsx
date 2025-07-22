@@ -429,14 +429,14 @@ const AllWalks: React.FC = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/*<div className="text-center mt-12">
           <a
             href="/"
             className="border-2 border-black text-black px-8 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors duration-200 inline-block"
           >
             Back to Home
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

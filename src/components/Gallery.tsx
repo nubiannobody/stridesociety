@@ -4,63 +4,61 @@ import { Camera, Users, MapPin, Calendar } from 'lucide-react';
 const Gallery: React.FC = () => {
   const galleryImages = [
     {
-      image: "https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/morning motivation @ tiffany park.png",
       title: "Morning Motivation @ Tiffany Park",
       location: "Tiffany Park, Renton",
       date: "March 2025",
       participants: 25
     },
     {
-      image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image:  "/images/trailImages/Sunset Stroll at Lake Washington.png",
       title: "Sunset Stroll at Lake Washington Blvd",
       location: "Lake Washington Blvd, Renton",
       date: "February 2025",
       participants: 18
     },
     {
-      image: "https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/heritage park path.png",
       title: "Heritage Park Path",
       location: "Heritage Park, Renton",
       date: "February 2025",
       participants: 32
     },
     {
-      image: "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Urban Explorer - Renton Loop",
+      image:  "/images/trailImages/urban explorer renton loop.png",
       location: "Downtown Renton",
       date: "January 2025",
       participants: 22
     },
     {
-      image: "https://images.pexels.com/photos/1263986/pexels-photo-1263986.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/Coos Creek Trail.png",
       title: "Coos Creek Trail Loop",
       location: "Coos Creek Trail, Renton",
       date: "January 2025",
       participants: 15
     },
     {
-      image: "https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/fitbar to coulon park.png",
       title: "FitBar to Coulon Park",
       location: "Renton Waterfront",
       date: "December 2024",
       participants: 28
     },
     {
-      image: "https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image:  "/images/trailImages/heritage park path.png",
       title: "Nature & Nurture Walk",
       location: "Gene Coulon Park",
       date: "December 2024",
       participants: 35
     },
     {
-      image: "https://images.pexels.com/photos/1571454/pexels-photo-1571454.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Forest Adventure",
+      image: "/images/trailImages/Cedar River Trail.png",
       location: "Cedar River Trail",
       date: "November 2024",
       participants: 20
     },
     {
-      image: "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=600",
+      image: "/images/trailImages/urban explorer renton loop.png",
       title: "City Lights Walk",
       location: "Downtown Renton",
       date: "November 2024",

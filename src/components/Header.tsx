@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Navigation } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -10,17 +11,17 @@ const Header: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Walks', href: '#walks' },
-    { name: 'Join', href: '#join' },
-    { name: 'Events', href: '#events' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Walks', href: '/walk-registration' },
+    { name: 'Join', href: '/join' },
+    { name: 'Events', href: '/events' },
     { name: 'Routes', href: '/routes' },
-    { name: 'Store', href: '#store' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'Community', href: '#community' },    
-  ];
+    { name: 'Store', href: '/store' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Community', href: '/community' },    
+  ];  
 
   useEffect(() => {
     const getSession = async () => {
@@ -87,25 +88,20 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Navigation className="h-8 w-8 text-black mr-3" />
-            <a
-              href="#home"
-              className="text-2xl font-bold text-black inline-block px-4 py-2"
-            >
-              Stride Society
-            </a>
+            <Link to="/" className="text-2xl font-bold text-black inline-block px-4 py-2">
+  Stride Society
+</Link>
+
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <nav className="flex space-x-8">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-black hover:text-gray-600 transition-colors duration-200 font-medium"
-                >
-                  {item.name}
-                </a>
+               <Link to={item.href} className="text-black hover:text-gray-600 transition-colors duration-200 font-medium">
+               {item.name}
+             </Link>
+             
               ))}
             </nav>
             
@@ -160,14 +156,14 @@ const Header: React.FC = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-black hover:text-gray-600 transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
+               <Link
+               key={item.name}
+               to={item.href}
+               className="block px-3 py-2 text-black hover:text-gray-600 transition-colors duration-200 font-medium"
+               onClick={() => setIsMenuOpen(false)}
+             >
+               {item.name}
+             </Link>
               ))}
               
               {/* Mobile Auth Buttons */}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -69,22 +70,11 @@ const Navbar = () => {
   return (
     <nav className="w-full flex justify-between items-center p-4 border-b border-gray-300">
       <ul className="flex gap-6 text-lg font-semibold">
-        <li><a href="#home">Stride Society</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#walks">Walks</a></li>
-        <li>
-          <a
-            href="#join"
-            onClick={(e) => {
-              e.preventDefault();
-              handleJoinClick();
-            }}
-            className="cursor-pointer hover:text-gray-600 transition-colors"
-          >
-            Join
-          </a>
-        </li>
-        <li><a href="#events">Events</a></li>
+      <li><Link to="/">Stride Society</Link></li>
+      <li><Link to="/about">About</Link></li>
+      <li><Link to="/walk-registration">Walks</Link></li>
+      <li><Link to="/join">Join</Link></li>
+      <li><Link to="/events">Events</Link></li>  
       </ul>
       <div className="flex items-center gap-3">
         {loading ? (
