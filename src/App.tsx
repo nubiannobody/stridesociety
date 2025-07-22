@@ -17,6 +17,7 @@ import Contact from './components/Contact';
 import AllWalks from './components/AllWalks';
 import RouteMapViewer from './components/RouteMapViewer';
 import FullScreenMap from './components/FullScreenMap';
+import SignIn from './pages/auth/SignIn';
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -56,6 +57,7 @@ function App() {
       <Route path="/walk-registration" element={<Layout><WalkRegistration /></Layout>} />
       <Route path="/register" element={<Layout><WalkRegistration /></Layout>} />
       <Route path="/route-map" element={<Layout><RouteMapViewer /></Layout>} />
+      <Route path="/auth/signin" element={<SignIn />} />
       <Route path="/fullscreen-map" element={<Layout><FullScreenMap /></Layout>} />
     </Routes>
   );

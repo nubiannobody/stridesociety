@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, MapPin, Users, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { supabase } from '../lib/supabaseClient';
 
 const Hero: React.FC = () => {
   return (

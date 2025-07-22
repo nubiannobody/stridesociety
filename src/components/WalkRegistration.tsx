@@ -93,17 +93,6 @@ const WalkRegistration: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block font-semibold">Phone Number</label>
-              <input
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="border rounded p-2 w-full"
-              />
-            </div>
-            <div>
               <label className="block font-semibold">Walk Shoes</label>
               <input
                 name="walkShoes"
