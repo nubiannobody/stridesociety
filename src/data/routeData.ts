@@ -1,7 +1,7 @@
 // Route data for all Stride Society walks in Renton, WA
 export interface RouteData {
   name: string;
-  distance: string;
+  miles: string;
   time: string;
   difficulty: string;
   type: string;
@@ -30,7 +30,7 @@ export interface RouteData {
 export const routeData: { [key: string]: RouteData } = {
   "fitbar-to-coulon": {
     name: "FitBar to Coulon Park",
-    distance: "4.0 miles",
+    miles: "4.0 miles",
     time: "1 hour 20 minutes",
     difficulty: "Moderate",
     type: "Out & Back",
@@ -86,7 +86,7 @@ export const routeData: { [key: string]: RouteData } = {
   
   "coos-creek-trail": {
     name: "Coos Creek Trail Loop",
-    distance: "2.2 miles",
+    miles: "2.2 miles",
     time: "45 minutes",
     difficulty: "Easy",
     type: "Loop",
@@ -136,7 +136,7 @@ export const routeData: { [key: string]: RouteData } = {
 
   "heritage-park": {
     name: "Heritage Park Path",
-    distance: "3.5 miles",
+    miles: "3.5 miles",
     time: "1 hour 10 minutes",
     difficulty: "Easy",
     type: "Loop",
@@ -199,7 +199,7 @@ export const routeData: { [key: string]: RouteData } = {
 
   "sunset-stroll": {
     name: "Sunset Stroll at Lake Washington Blvd",
-    distance: "2.0 miles",
+    miles: "2.0 miles",
     time: "40 minutes",
     difficulty: "Easy",
     type: "Out & Back",
@@ -240,7 +240,7 @@ export const routeData: { [key: string]: RouteData } = {
 
   "morning-motivation": {
     name: "Morning Motivation @ Tiffany Park",
-    distance: "2.7 miles",
+    miles: "2.7 miles",
     time: "55 minutes",
     difficulty: "Easy",
     type: "Loop",
@@ -294,7 +294,7 @@ export const routeData: { [key: string]: RouteData } = {
 
   "urban-explorer": {
     name: "Urban Explorer - Renton Loop",
-    distance: "4.5 miles",
+    miles: "4.5 miles",
     time: "1 hour 30 minutes",
     difficulty: "Moderate",
     type: "Loop",

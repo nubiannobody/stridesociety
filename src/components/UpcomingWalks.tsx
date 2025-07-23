@@ -3,17 +3,25 @@ import { useNavigate } from 'react-router-dom';
 import { Calendar, MapPin, Clock, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-<section id="routes" className="py-16">
-  <h2 className="text-3xl font-bold mb-6">Routes</h2>
-  {/* Your content goes here */}
-</section>
-
+interface Walk {
+  name: string;
+  date: string;
+  time: string;
+  location: string;
+  miles: string;
+  difficulty: string;
+  participants: number;
+  type: string;
+  highlights: string[];
+  theme: string;
+  image: string;
+}
 
 const UpcomingWalks = () => {
   const navigate = useNavigate();
 
   const handleRegister = (walk: Walk) => {
-    navigate('/walk-registration', { state: { walk } });
+    navigate('/register', { state: { walk } });
   };
 
   const upcomingWalks = [
@@ -126,7 +134,10 @@ const UpcomingWalks = () => {
               <div className="flex justify-between items-center">
                 <span className="text-lg font-semibold text-black">{walk.miles}</span>
                 <button 
-                  onClick={() => handleRegister(walk)}
+                  onClick={() => {
+                    localStorage.setItem('selectedWalk', JSON.stringify(walk));
+                    navigate('/register');
+                  }}                  
                   className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors duration-200"
                 >
                   Register

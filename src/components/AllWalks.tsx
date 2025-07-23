@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Clock, Ruler, Star, Users, Filter, Download } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+
 const AllWalks: React.FC = () => {
   const [filterDifficulty, setFilterDifficulty] = useState('all');
   const [filterType, setFilterType] = useState('all');
@@ -197,9 +198,10 @@ const AllWalks: React.FC = () => {
   };
 
   const handleRegister = (walk: typeof allRoutes[0]) => {
-    navigate('/walk-registration', { state: { walk } });
+    localStorage.setItem('selectedWalk', JSON.stringify(walk));
+    navigate('/register');
   };
-
+  
   const handleViewMap = (route: typeof allRoutes[0]) => {
     // Opens Google Maps with walking directions
     const { start, end } = route.coordinates;

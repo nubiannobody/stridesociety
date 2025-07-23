@@ -14,7 +14,7 @@ L.Icon.Default.mergeOptions({
 
 interface RouteData {
   name: string;
-  distance: string;
+  miles: string;
   time: string;
   difficulty: string;
   type: string;

@@ -47,7 +47,6 @@ function HomePage() {
       <Hero />
       <About />
       <UpcomingWalks />
-      <WalkRegistration />
       <JoinClub />
       <EventsCalendar />
       <WalkingRoutes />
@@ -74,7 +73,8 @@ function App() {
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
         <Route path="/community" element={<Layout><CommunityChat /></Layout>} />
         <Route path="/routes" element={<Layout><AllWalks /></Layout>} />
-        <Route path="/walk-registration" element={<Layout><UpcomingWalks/></Layout>} />
+        {/*<Route path="/walk-registration" element={<Layout><UpcomingWalks/></Layout>} />*/}
+        <Route path="/walks" element={<Layout><UpcomingWalks/></Layout>} />
         <Route path="/register" element={<Layout><WalkRegistration /></Layout>} />
         <Route path="/route-map" element={<Layout><RouteMapViewer /></Layout>} />
         <Route path="/fullscreen-map" element={<Layout><FullScreenMap /></Layout>} />
