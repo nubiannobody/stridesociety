@@ -1,12 +1,12 @@
 import React from 'react';
 import { ArrowRight, MapPin, Users, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { supabase } from '../lib/supabaseClient';
+import { supabase } from '../lib/supabaseClient'
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="pt-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section id="home" className="pt-2 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="text-center">
           <div className="mb-8">
             <div className="w-24 h-24 mx-auto mb-6 bg-black rounded-full flex items-center justify-center">

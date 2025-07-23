@@ -1,85 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X, Navigation } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
-import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+
 
 const Header: React.FC = () => {
+  const location = useLocation();
+  const isSignIn = location.pathname === '/signin';
   const navigate = useNavigate();
+  const { session, loading } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [session, setSession] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Walks', href: '/walk-registration' },
-    { name: 'Join', href: '/join' },
     { name: 'Events', href: '/events' },
     { name: 'Routes', href: '/routes' },
     { name: 'Store', href: '/store' },
     { name: 'Gallery', href: '/gallery' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Community', href: '/community' },    
-  ];  
-
-  useEffect(() => {
-    const getSession = async () => {
-      const { data, error } = await supabase.auth.getSession();
-      if (error) {
-        console.error('Error getting session:', error);
-      }
-      setSession(data?.session || null);
-      setLoading(false);
-    };
-
-    getSession();
-
-    const { data: authListener } = supabase.auth.onAuthStateChange((_event, newSession) => {
-      setSession(newSession);
-    });
-
-    return () => {
-      authListener.subscription.unsubscribe();
-    };
-  }, []);
-
+    { name: 'Community', href: '/community' },
+  ];
+  
   const handleJoinClick = () => {
     const joinSection = document.getElementById('join');
     if (joinSection) {
       joinSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   const handleSignIn = () => {
     navigate('/auth/signin');
   };
 
-  {/*const handleSignIn = async () => {
-    try {
-      const { error } = await supabase.auth.signInWithOAuth({ 
-        provider: 'google',
-        options: {
-          redirectTo: window.location.origin
-        }
-      });
-      if (error) {
-        console.error('Sign in error:', error);
-      }
-    } catch (error) {
-      console.error('Sign in error:', error);
-    }
-  }; */}
-
   const handleSignOut = async () => {
-    try {
-      const { error } = await supabase.auth.signOut();
-      if (error) {
-        console.error('Sign out error:', error);
-      }
-    } catch (error) {
-      console.error('Sign out error:', error);
-    }
+    const { error } = await supabase.auth.signOut();
+    if (error) console.error('Sign out error:', error);
   };
 
   return (
@@ -89,22 +47,20 @@ const Header: React.FC = () => {
           <div className="flex items-center">
             <Navigation className="h-8 w-8 text-black mr-3" />
             <Link to="/" className="text-2xl font-bold text-black inline-block px-4 py-2">
-  Stride Society
-</Link>
-
+              Stride Society
+            </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <nav className="flex space-x-8">
               {navItems.map((item) => (
-               <Link to={item.href} className="text-black hover:text-gray-600 transition-colors duration-200 font-medium">
-               {item.name}
-             </Link>
-             
+                <Link key={item.name} to={item.href} className="text-black hover:text-gray-600 transition-colors duration-200 font-medium">
+                  {item.name}
+                </Link>
               ))}
             </nav>
-            
+
             {/* Auth Buttons */}
             <div className="flex items-center space-x-3 ml-6">
               {loading ? (
@@ -156,16 +112,16 @@ const Header: React.FC = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               {navItems.map((item) => (
-               <Link
-               key={item.name}
-               to={item.href}
-               className="block px-3 py-2 text-black hover:text-gray-600 transition-colors duration-200 font-medium"
-               onClick={() => setIsMenuOpen(false)}
-             >
-               {item.name}
-             </Link>
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="block px-3 py-2 text-black hover:text-gray-600 transition-colors duration-200 font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
               ))}
-              
+
               {/* Mobile Auth Buttons */}
               <div className="border-t pt-3 mt-3 space-y-2">
                 {loading ? (
@@ -187,15 +143,11 @@ const Header: React.FC = () => {
                   </>
                 ) : (
                   <>
-                    <button
-                      onClick={() => {
-                        handleJoinClick();
-                        setIsMenuOpen(false);
-                      }}
-                      className="block w-full text-left px-3 py-2 text-black hover:text-gray-600 transition-colors duration-200 font-medium"
-                    >
-                      Join
-                    </button>
+                    <Link to="/JoinClub">
+  <button  className="bg-black text-white px-4 py-2 rounded-xl hover:opacity-90 transition-opacity duration-200">
+    Join the Club
+  </button>
+</Link>
                     <button
                       onClick={() => {
                         handleSignIn();

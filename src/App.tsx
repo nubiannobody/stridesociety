@@ -21,21 +21,21 @@ import SignIn from './pages/auth/SignIn';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import UpdatePassword from './pages/auth/UpdatePassword';
 import Welcome from './profile/welcome';
-import Navbar from './components/Navbar';
 import BackButton from '../src/components/BackButton';
+
 
 function Layout({ children, showBackButton = true }: { children: React.ReactNode; showBackButton?: boolean }) {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-white">
+      <main className="min-h-screen bg-white pt-16"> {/* add padding for fixed header */}
         {children}
         {showBackButton && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 flex justify-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1 pb-8 flex justify-center">
             <BackButton />
           </div>
         )}
-      </div>
+      </main>
       <Footer />
     </>
   );
@@ -63,7 +63,6 @@ function HomePage() {
 function App() {
   return (
     <>
-      <Navbar />
       <Routes>
         <Route path="/update-password" element={<UpdatePassword />} />
         <Route path="/" element={<Layout showBackButton={false}><HomePage /></Layout>} />
@@ -75,7 +74,7 @@ function App() {
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
         <Route path="/community" element={<Layout><CommunityChat /></Layout>} />
         <Route path="/routes" element={<Layout><AllWalks /></Layout>} />
-        <Route path="/walk-registration" element={<UpcomingWalks />} />
+        <Route path="/walk-registration" element={<Layout><UpcomingWalks/></Layout>} />
         <Route path="/register" element={<Layout><WalkRegistration /></Layout>} />
         <Route path="/route-map" element={<Layout><RouteMapViewer /></Layout>} />
         <Route path="/fullscreen-map" element={<Layout><FullScreenMap /></Layout>} />

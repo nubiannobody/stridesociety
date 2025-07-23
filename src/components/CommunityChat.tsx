@@ -57,14 +57,10 @@ const CommunityChat: React.FC = () => {
   };
 
   return (
-    <section id="community" className="py-20 bg-gray-50">
+    <section id="community" className="py-2 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* About Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">About Stride Society</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We believe that walking is more than just movement—it's a pathway to connection, wellness, and community. Founded in 2020, Stride Society has become the premier walking club in our city.
-          </p>
         </div>
 
         {/* Community Chat Section */}

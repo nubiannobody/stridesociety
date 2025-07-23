@@ -76,7 +76,7 @@ const UpcomingWalks = () => {
   ];
 
   return (
-    <section id="walks" className="py-20 bg-white">
+    <section id="walks" className="py-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Upcoming Walks</h2>

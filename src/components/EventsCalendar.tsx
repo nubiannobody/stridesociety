@@ -1,25 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Calendar, ChevronLeft, ChevronRight, MapPin, Clock, Users } from 'lucide-react';
 
 const EventsCalendar: React.FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date(2025, 2, 1)); // March 2025
-
-  const events = [
-    { date: 5, title: "Spring Kickoff Walk", time: "10:00 AM", location: "City Park", type: "special" },
-    { date: 8, title: "Morning Motivation @ Tiffany Park", time: "7:00 AM", location: "Tiffany Park", type: "regular" },
-    { date: 12, title: "Lunch Break Stroll", time: "12:00 PM", location: "Downtown Renton", type: "regular" },
-    { date: 15, title: "FitBar to Coulon Park", time: "9:00 AM", location: "FitBar Café", type: "regular" },
-    { date: 16, title: "Sunset Stroll at Lake Washington", time: "6:30 PM", location: "Lake Washington Blvd", type: "social" },
-    { date: 18, title: "Morning Motivation @ Tiffany Park", time: "7:00 AM", location: "Tiffany Park", type: "regular" },
-    { date: 20, title: "Urban Explorer - Renton Loop", time: "10:00 AM", location: "Downtown Renton", type: "regular" },
-    { date: 22, title: "Heritage Park Path", time: "8:00 AM", location: "Heritage Park", type: "regular" },
-    { date: 26, title: "Community Cleanup Walk", time: "10:00 AM", location: "Coulon Park", type: "volunteer" },
-    { date: 29, title: "Monthly Challenge", time: "9:00 AM", location: "Various", type: "challenge" }
-  ];
+  const [selectedDate, setSelectedDate] = useState<number | null>(null);
 
   const getDaysInMonth = (date: Date) => {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
   };
+
+  const baseEvents = [
+    { title: "Spring Kickoff Walk", time: "10:00 AM", location: "City Park", type: "special" },
+    { title: "Morning Motivation @ Tiffany Park", time: "7:00 AM", location: "Tiffany Park", type: "regular" },
+    { title: "Lunch Break Stroll", time: "12:00 PM", location: "Downtown Renton", type: "regular" },
+    { title: "FitBar to Coulon Park", time: "9:00 AM", location: "FitBar Café", type: "regular" },
+    { title: "Sunset Stroll at Lake Washington", time: "6:30 PM", location: "Lake Washington Blvd", type: "social" },
+    { title: "Morning Motivation @ Tiffany Park", time: "7:00 AM", location: "Tiffany Park", type: "regular" },
+    { title: "Urban Explorer - Renton Loop", time: "10:00 AM", location: "Downtown Renton", type: "regular" },
+    { title: "Heritage Park Path", time: "8:00 AM", location: "Heritage Park", type: "regular" },
+    { title: "Community Cleanup Walk", time: "10:00 AM", location: "Coulon Park", type: "volunteer" },
+    { title: "Monthly Challenge", time: "9:00 AM", location: "Various", type: "challenge" }
+  ];
+
+  // Generate random events for the current month
+  const events = useMemo(() => {
+    const daysInMonth = getDaysInMonth(currentDate);
+    const shuffledEvents = [...baseEvents];
+    const randomEvents = [];
+    
+    // Generate random dates for events (ensure no duplicates on same day)
+    const usedDates = new Set();
+    
+    shuffledEvents.forEach(event => {
+      let randomDate;
+      do {
+        randomDate = Math.floor(Math.random() * daysInMonth) + 1;
+      } while (usedDates.has(randomDate));
+      
+      usedDates.add(randomDate);
+      randomEvents.push({
+        ...event,
+        date: randomDate
+      });
+    });
+    
+    return randomEvents.sort((a, b) => a.date - b.date);
+  }, [currentDate]);
 
   const getFirstDayOfMonth = (date: Date) => {
     return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
@@ -35,6 +61,7 @@ const EventsCalendar: React.FC = () => {
       }
       return newDate;
     });
+    setSelectedDate(null); // Reset selected date when changing months
   };
 
   const monthNames = [
@@ -47,9 +74,8 @@ const EventsCalendar: React.FC = () => {
   const daysArray = Array.from({ length: daysInMonth }, (_, i) => i + 1);
   const emptyDays = Array.from({ length: firstDay }, (_, i) => i);
 
-  const getEventType = (date: number) => {
-    const event = events.find(e => e.date === date);
-    return event ? event.type : null;
+  const getEventForDate = (date: number) => {
+    return events.find(e => e.date === date);
   };
 
   const getEventTypeColor = (type: string) => {
@@ -58,14 +84,30 @@ const EventsCalendar: React.FC = () => {
       case 'social': return 'bg-blue-100 text-blue-800';
       case 'volunteer': return 'bg-green-100 text-green-800';
       case 'challenge': return 'bg-red-100 text-red-800';
-      default: return 'bg-gray-100 text-gray-800';
+      default: return 'bg-orange-100 text-orange-800';
     }
   };
 
-  const selectedDateEvents = events.filter(event => event.date === 15); // Default to 15th
+  const getCalendarDayColor = (type: string) => {
+    switch (type) {
+      case 'special': return 'bg-purple-500 text-white hover:bg-purple-600';
+      case 'social': return 'bg-blue-500 text-white hover:bg-blue-600';
+      case 'volunteer': return 'bg-green-500 text-white hover:bg-green-600';
+      case 'challenge': return 'bg-red-500 text-white hover:bg-red-600';
+      default: return 'bg-orange-500 text-white hover:bg-orange-600';
+    }
+  };
+
+  const selectedDateEvents = selectedDate ? 
+    events.filter(event => event.date === selectedDate) : 
+    events.filter(event => event.date === new Date().getDate());
+
+  const handleDateClick = (day: number) => {
+    setSelectedDate(day);
+  };
 
   return (
-    <section id="events" className="py-20 bg-white">
+    <section id="events" className="py-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Events Calendar</h2>
@@ -111,18 +153,22 @@ const EventsCalendar: React.FC = () => {
                   <div key={index} className="p-2 h-16"></div>
                 ))}
                 {daysArray.map((day) => {
-                  const eventType = getEventType(day);
+                  const event = getEventForDate(day);
+                  const isSelected = selectedDate === day;
                   return (
                     <div
                       key={day}
+                      onClick={() => handleDateClick(day)}
                       className={`p-2 h-16 border border-gray-200 rounded cursor-pointer transition-colors duration-200 ${
-                        eventType ? 'bg-black text-white' : 'bg-white hover:bg-gray-100'
+                        event ? getCalendarDayColor(event.type) : 
+                        isSelected ? 'bg-blue-100 border-blue-300' :
+                        'bg-white hover:bg-gray-100'
                       }`}
                     >
                       <div className="font-medium">{day}</div>
-                      {eventType && (
+                      {event && (
                         <div className="text-xs mt-1 truncate">
-                          {events.find(e => e.date === day)?.title}
+                          {event.title}
                         </div>
                       )}
                     </div>
@@ -135,7 +181,9 @@ const EventsCalendar: React.FC = () => {
           {/* Event Details */}
           <div className="space-y-6">
             <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-black mb-4">Today's Events</h3>
+              <h3 className="text-xl font-bold text-black mb-4">
+                {selectedDate ? `Events for ${monthNames[currentDate.getMonth()]} ${selectedDate}` : "Selected Day's Events"}
+              </h3>
               {selectedDateEvents.length > 0 ? (
                 <div className="space-y-4">
                   {selectedDateEvents.map((event, index) => (
@@ -158,7 +206,7 @@ const EventsCalendar: React.FC = () => {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-600">No events scheduled for today.</p>
+                <p className="text-gray-600">No events scheduled for this day.</p>
               )}
             </div>
 
@@ -166,7 +214,7 @@ const EventsCalendar: React.FC = () => {
               <h3 className="text-xl font-bold text-black mb-4">Event Types</h3>
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <div className="w-3 h-3 bg-gray-400 rounded-full mr-3"></div>
+                  <div className="w-3 h-3 bg-orange-400 rounded-full mr-3"></div>
                   <span className="text-sm">Regular Walks</span>
                 </div>
                 <div className="flex items-center">
@@ -185,6 +233,25 @@ const EventsCalendar: React.FC = () => {
                   <div className="w-3 h-3 bg-red-400 rounded-full mr-3"></div>
                   <span className="text-sm">Challenges</span>
                 </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-black mb-4">This Month's Events</h3>
+              <div className="space-y-2 max-h-48 overflow-y-auto">
+                {events.map((event, index) => (
+                  <div 
+                    key={index} 
+                    onClick={() => handleDateClick(event.date)}
+                    className="flex items-center justify-between p-2 bg-white rounded cursor-pointer hover:bg-gray-100 transition-colors"
+                  >
+                    <div>
+                      <div className="font-medium text-sm">{event.title}</div>
+                      <div className="text-xs text-gray-600">{event.time}</div>
+                    </div>
+                    <div className="text-sm font-bold text-black">{event.date}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
