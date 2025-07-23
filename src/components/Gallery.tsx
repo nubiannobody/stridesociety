@@ -7,7 +7,7 @@ const Gallery: React.FC = () => {
       image: "/images/trailImages/morning motivation @ tiffany park.png",
       title: "Morning Motivation @ Tiffany Park",
       location: "Tiffany Park, Renton",
-      date: "March 2025",
+      date: "January 2025",
       participants: 25
     },
     {
@@ -21,47 +21,56 @@ const Gallery: React.FC = () => {
       image: "/images/trailImages/heritage park path.png",
       title: "Heritage Park Path",
       location: "Heritage Park, Renton",
-      date: "February 2025",
+      date: "March 2025",
       participants: 32
     },
     {
       image:  "/images/trailImages/urban explorer renton loop.png",
-      location: "Downtown Renton",
-      date: "January 2025",
+      title: "Urban Explorer - Renton Loop",
+      location: "Renton",
+      date: "April 2025",
       participants: 22
-    },
+    }, 
     {
       image: "/images/trailImages/Coos Creek Trail.png",
       title: "Coos Creek Trail Loop",
       location: "Coos Creek Trail, Renton",
-      date: "January 2025",
+      date: "May 2025",
       participants: 15
     },
     {
       image: "/images/trailImages/fitbar to coulon park.png",
       title: "FitBar to Coulon Park",
       location: "Renton Waterfront",
-      date: "December 2024",
+      date: "June 2025",
       participants: 28
     },
     {
       image:  "/images/trailImages/heritage park path.png",
       title: "Nature & Nurture Walk",
       location: "Gene Coulon Park",
-      date: "December 2024",
+      date: "July 2025",
       participants: 35
     },
     {
       image: "/images/trailImages/Cedar River Trail.png",
-      location: "Cedar River Trail",
-      date: "November 2024",
+      title: "Cedar River Trail",
+      location: "Renton",
+      date: "August 2025",
       participants: 20
     },
     {
       image: "/images/trailImages/urban explorer renton loop.png",
-      title: "City Lights Walk",
-      location: "Downtown Renton",
-      date: "November 2024",
+      title: "Renton Highlands Loop",
+      location: "Renton",
+      date: "September 2025",
+      participants: 26
+    },
+    {
+      image: "/images/trailImages/Beach Walk.png",
+      title: "Relaxing Beach Walk",
+      location: "Renton",
+      date: "October 2025",
       participants: 26
     }
   ];

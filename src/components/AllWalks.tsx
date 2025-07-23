@@ -28,7 +28,7 @@ const AllWalks: React.FC = () => {
     },
     {
       name: "Coos Creek Trail Loop",
-      theme: "Shaded, nature-heavy path perfect for early mornings",
+      theme: "City views, clean streets",
       miles: "2.2 miles",
       time: "45 minutes",
       difficulty: "Easy",
@@ -37,7 +37,7 @@ const AllWalks: React.FC = () => {
       type: "Loop",
       location: "Renton, WA",
       status: "Active",
-      highlights: ["Shaded trail", "Creek views", "Morning birds"],
+      highlights: ["A vibrant city trail buzzing with life"],
       image: "/images/trailImages/Coos Creek Trail.png",
       coordinates: {
         start: { lat: 47.4729, lng: -122.2271 },
