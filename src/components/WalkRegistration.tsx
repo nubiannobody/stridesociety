@@ -90,6 +90,26 @@ const WalkRegistration: React.FC = () => {
               />
             </div>
             <div>
+              <label className="block font-semibold">Email Address</label>
+              <input
+                name="Email Address"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="border rounded p-2 w-full"
+              />
+            </div>
+            <div>
+              <label className="block font-semibold">Confirm Email Address</label>
+              <input
+                name="Confirm Email Address"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="border rounded p-2 w-full"
+              />
+            </div>
+            <div>
               <label className="block font-semibold">Walk Shoes</label>
               <input
                 name="walkShoes"

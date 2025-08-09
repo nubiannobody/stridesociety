@@ -81,13 +81,13 @@ const Header: React.FC = () => {
                 <>
                   <button
                     onClick={handleJoinClick}
-                    className="bg-black text-white px-4 py-2 rounded-xl hover:opacity-90 transition-opacity duration-200"
+                    className="bg-black text-white px-4 py-2 rounded-xl hover:opacity-90 transition-opacity duration-200 min-w-[88px]"
                   >
                     Join
                   </button>
                   <button
                     onClick={handleSignIn}
-                    className="border border-black text-black px-4 py-2 rounded-xl hover:bg-black hover:text-white transition-all duration-200"
+                    className="border border-black text-black px-4 py-2 rounded-xl hover:bg-black hover:text-white transition-opacity duration-200 flex-shrink-0 min-w-[88px]"
                   >
                     Sign In
                   </button>

@@ -64,11 +64,11 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 text-gray-300 mr-3" />
-                <span className="text-gray-300">(555) 123-WALK</span>
+                <span className="text-gray-300">(555) 123-STRIDE</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 text-gray-300 mr-3 mt-1" />
-                <span className="text-gray-300">123 Walking Street<br />City, State 12345</span>
+                <span className="text-gray-300">123 Walking Street<br />Renton, WA 98058</span>
               </div>
             </div>
           </div>

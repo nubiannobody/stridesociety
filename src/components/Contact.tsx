@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-black">Phone</p>
-                    <p className="text-gray-600">(555) 123-WALK</p>
+                    <p className="text-gray-600">(555) 123-STRIDE</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-black">Address</p>
-                    <p className="text-gray-600">123 Walking Street<br />City, State 12345</p>
+                    <p className="text-gray-600">123 Walking Street<br />Renton, WA 98058</p>
                   </div>
                 </div>
               </div>
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
                   <Clock className="h-5 w-5 text-black mr-3" />
                   <div>
                     <p className="font-semibold text-black">Sunday</p>
-                    <p className="text-gray-600">10:00 AM - 2:00 PM</p>
+                    <p className="text-gray-600">8:00 AM - 10:00 PM</p>
                   </div>
                 </div>
               </div>
